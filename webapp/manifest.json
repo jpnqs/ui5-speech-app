@@ -1,0 +1,34 @@
+{
+  "_version": "1.56.0",
+  "sap.app": {
+    "id": "speech.app",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "{{appTitle}}",
+    "applicationVersion": { "version": "1.0.0" }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": { "desktop": true, "tablet": true, "phone": true }
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.120.0",
+      "libs": { "sap.m": {} }
+    },
+    "rootView": {
+      "viewName": "speech.app.view.Main",
+      "type": "XML",
+      "async": true,
+      "id": "MainView"
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": { "bundleName": "speech.app.i18n.i18n" }
+      },
+      "vm": { "type": "sap.ui.model.json.JSONModel" }
+    },
+    "contentDensities": { "compact": true, "cozy": true }
+  }
+}

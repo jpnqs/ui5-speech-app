@@ -1,0 +1,34 @@
+<mvc:View
+  controllerName="speech.app.controller.Main"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <App>
+    <Page title="{i18n>pageTitle}">
+      <content>
+        <HBox alignItems="Center" justifyContent="Start">
+          <Button text="{i18n>start}" type="Emphasized" press=".onStart"/>
+          <Button text="{i18n>stop}" press=".onStop" class="sapUiTinyMarginBegin"/>
+          <Label text="{i18n>silenceMs}" class="sapUiTinyMarginBegin"/>
+          <Input width="8rem" valueLiveUpdate="true"
+                 value="{path:'vm>/silenceMs', type:'sap.ui.model.type.Integer'}"
+                 placeholder="1500"/>
+        </HBox>
+
+        <VBox class="sapUiSmallMarginTop">
+          <Label text="{i18n>dictateHere}"/>
+          <Input value="{vm>/inputText}" placeholder="{i18n>placeholder}" liveChange=".onManualEdit"/>
+        </VBox>
+
+        <Toolbar class="sapUiSmallMarginTop">
+          <ToolbarSpacer/>
+          <Button text="{i18n>commit}" press=".onCommit"/>
+          <Button text="{i18n>clear}" press=".onClear" class="sapUiTinyMarginBegin"/>
+        </Toolbar>
+
+        <List headerText="{i18n>items}" items="{path:'vm>/items'}">
+          <StandardListItem title="{vm>text}"/>
+        </List>
+      </content>
+    </Page>
+  </App>
+</mvc:View>
